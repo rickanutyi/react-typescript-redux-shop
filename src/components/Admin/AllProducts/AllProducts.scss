@@ -1,0 +1,43 @@
+.all_products {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  .mini_card {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    height: 267px;
+    // justify-content: space-around;
+    .product_name {
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+    .product_image {
+      width: 200px;
+      height: 200px;
+      img {
+        object-fit: cover;
+      }
+    }
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0px;
+      button {
+        width: 120px;
+        height: 40px;
+        border: none;
+        border-radius: 5px;
+        background-color: #1f7d63;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #fff;
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+.order_desserts {
+  font-family: "Fira sans" sans-serif;
+  height: 320px;
+  color: #fff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.order_desserts .order_desserts_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 10px 40px;
+  gap: 30px;
+  height: 100%;
+  background-image: url("../../../assets/images/info_2.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.order_desserts .order_desserts_content .order_desserts_title {
+  font-size: 1.5rem;
+}
+
+.order_desserts .order_desserts_content .order_desserts_text {
+  font-size: 24px;
+}
+
+.order_desserts .order_desserts_content .order_desserts_btn {
+  width: 170px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #1f7d63;
+  border-radius: 6px;
+}
+/*# sourceMappingURL=OrderDesserts.css.map */

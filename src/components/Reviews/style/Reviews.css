@@ -1,0 +1,31 @@
+.reviews_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 40px;
+  padding: 10 0;
+}
+
+.reviews_content .review_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+
+.reviews_content .review_item .review_user_name {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.reviews_content .review_item .review_message {
+  font-size: 1.3rem;
+}
+/*# sourceMappingURL=Reviews.css.map */

@@ -1,0 +1,113 @@
+.details {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.details .details_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.details .details_content .product_images {
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  width: 50%;
+}
+
+.details .details_content .product_images .small_images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 5px;
+}
+
+.details .details_content .product_images .small_images img {
+  padding: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.details .details_content .product_images .large_images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 400px;
+  overflow: hidden;
+}
+
+.details .details_content .product_images .large_images .slider_line {
+  height: 400px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  left: 0;
+  -webkit-transition: all ease 240ms;
+  transition: all ease 240ms;
+}
+
+.details .details_content .product_images .large_images .slider_line img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.details .details_content .product_info {
+  width: 50%;
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 40px;
+}
+
+.details .details_content .product_info .product_name {
+  text-align: left;
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 10px;
+}
+
+.details .details_content .product_info .price_btn-to_basket {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.details .details_content .product_info .price_btn-to_basket .price {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.details .details_content .product_info .price_btn-to_basket .btn-toBasket {
+  padding: 12px 30px;
+  background-color: #1f7d63;
+  border-radius: 5px;
+  font-size: 1.4rem;
+  color: #fff;
+}
+/*# sourceMappingURL=Details.css.map */

@@ -1,0 +1,16 @@
+.new_products {
+  width: 100%;
+  .new_products_items {
+    width: 100;
+    .new_products_title {
+      font-size: 3rem;
+      font-weight: 600;
+      margin: 20px 0;
+    }
+    .new_products_list {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

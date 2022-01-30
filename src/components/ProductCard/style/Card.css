@@ -1,0 +1,69 @@
+.card {
+  width: 220px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+
+.card .card_image {
+  width: 220px;
+  height: 220px;
+}
+
+.card .card_image img {
+  width: 100%;
+  height: 100%;
+}
+
+.card .card_actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 15px;
+}
+
+.card .card_actions .old_price {
+  font-size: 1.4rem;
+  text-decoration: line-through;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.card .card_actions .preview_price {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.card .card_actions .btn_to-basket {
+  width: 100%;
+  height: 50px;
+  background-color: #1f7d63;
+  font-size: 1.3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  gap: 10px;
+  border-radius: 10px;
+}
+
+.card .card_actions .btn_to-basket svg {
+  fill: #fff;
+}
+/*# sourceMappingURL=Card.css.map */

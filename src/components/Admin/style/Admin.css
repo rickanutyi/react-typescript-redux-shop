@@ -1,0 +1,15 @@
+.admin_page .admin_page_content .admin {
+  padding: 20px;
+  font-size: 2rem;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 700;
+}
+
+.admin_page .admin_page_content .add_new_product {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+/*# sourceMappingURL=Admin.css.map */

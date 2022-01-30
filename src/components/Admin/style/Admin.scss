@@ -1,0 +1,14 @@
+.admin_page {
+  .admin_page_content {
+    .admin {
+      padding: 20px;
+      font-size: 2rem;
+      color: rgba(0, 0, 0, 0.7);
+      font-weight: 700;
+    }
+    .add_new_product {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+}

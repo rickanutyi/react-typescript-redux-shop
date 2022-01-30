@@ -1,0 +1,66 @@
+.all_products {
+  width: 50%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 20px;
+}
+
+.all_products .mini_card {
+  width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 267px;
+}
+
+.all_products .mini_card .product_name {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.all_products .mini_card .product_image {
+  width: 200px;
+  height: 200px;
+}
+
+.all_products .mini_card .product_image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.all_products .mini_card .actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 20px;
+  padding: 10px 0px;
+}
+
+.all_products .mini_card .actions button {
+  width: 120px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  background-color: #1f7d63;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+}
+/*# sourceMappingURL=AllProducts.css.map */
