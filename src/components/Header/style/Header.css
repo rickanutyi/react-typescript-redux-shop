@@ -1,5 +1,6 @@
 .header {
   width: 100%;
+  padding: 0px 10px;
 }
 
 .header .header_top_menu {
@@ -25,6 +26,10 @@
   gap: 20px;
 }
 
+.header .header_top_menu .header_top-left ul li {
+  cursor: pointer;
+}
+
 .header .header_top_menu .header_top-right {
   width: 50%;
 }
@@ -38,6 +43,10 @@
       -ms-flex-pack: end;
           justify-content: flex-end;
   gap: 20px;
+}
+
+.header .header_top_menu .header_top-right ul li {
+  cursor: pointer;
 }
 
 .header .header_main {
@@ -54,6 +63,12 @@
           justify-content: space-between;
 }
 
+@media all and (max-width: 950px) {
+  .header .header_main {
+    padding: 7px;
+  }
+}
+
 .header .header_main .logo {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -63,6 +78,18 @@
       -ms-flex-align: center;
           align-items: center;
   font-size: 2rem;
+}
+
+@media all and (max-width: 950px) {
+  .header .header_main .logo {
+    font-size: 2rem;
+  }
+}
+
+@media all and (max-width: 950px) {
+  .header .header_main .logo h2 {
+    font-size: 2rem;
+  }
 }
 
 .header .header_main .btn_catalog {
@@ -84,6 +111,13 @@
   border-radius: 10px;
 }
 
+@media all and (max-width: 950px) {
+  .header .header_main .btn_catalog {
+    width: 100px;
+    height: 40px;
+  }
+}
+
 .header .header_main .btn_catalog svg {
   fill: #fff;
 }
@@ -94,6 +128,19 @@
   position: relative;
   border-radius: 10px;
   overflow: hidden;
+}
+
+@media all and (max-width: 1200px) {
+  .header .header_main .search_inp {
+    width: 35%;
+  }
+}
+
+@media all and (max-width: 950px) {
+  .header .header_main .search_inp {
+    height: 40px;
+    padding: 0px 10px;
+  }
 }
 
 .header .header_main .search_inp input {
@@ -123,8 +170,23 @@
           align-items: center;
 }
 
+@media all and (max-width: 950px) {
+  .header .header_main .search_inp .search_icon {
+    height: 40px;
+  }
+}
+
 .header .header_main .search_inp .search_icon svg {
   fill: #fff;
+  width: 35px;
+  height: 35px;
+}
+
+@media all and (max-width: 950px) {
+  .header .header_main .search_inp .search_icon svg {
+    height: 25px;
+    width: 25px;
+  }
 }
 
 .header .header_main .user_actions {
@@ -140,6 +202,14 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media all and (max-width: 1100px) {
+  .header .header_main .user_actions {
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
 }
 
 .header .header_main .user_actions svg {

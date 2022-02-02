@@ -9,7 +9,9 @@ import "./style/ProductsList.css";
 const ProductsList = () => {
   let arr = [11, 22, 33, 44, 55];
   const dispatch = useDispatch();
-  const { products, loading } = useTypedSelector((state) => state.products);
+  const { products, loading, error } = useTypedSelector(
+    (state) => state.products
+  );
   const [product, setProducts] = useState<ProductType[] | null>([]);
   useEffect(() => {
     dispatch(getProducts());
@@ -21,6 +23,10 @@ const ProductsList = () => {
     return <h1>loading</h1>;
   }
 
+  if (error) {
+    console.log("22error");
+    return <h1>{error}</h1>;
+  }
   const drinks =
     product !== null
       ? product.map((prod) => <Card key={prod.id} product={prod} />)

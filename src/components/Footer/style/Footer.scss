@@ -1,11 +1,15 @@
 .footer {
   margin-top: auto;
+  height: 500px;
+  background-color: rgba(248, 244, 1, 0.2);
   .footer_content {
     // height: 600px;
     // background-color: rgb(83, 71, 71);
     display: flex;
     gap: 30px;
+
     ul {
+      padding-top: 50px;
       display: flex;
       flex-direction: column;
       font-size: 1rem;

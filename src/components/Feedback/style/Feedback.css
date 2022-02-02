@@ -1,1 +1,66 @@
-/* No CSS *//*# sourceMappingURL=Feedback.css.map */
+.feedback {
+  margin-bottom: 40px;
+}
+
+.feedback .title {
+  text-align: center;
+  font-size: 2rem;
+  padding: 20px 0px;
+  font-weight: 500;
+  color: #635b5b;
+}
+
+.feedback .feedback_form {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.feedback .feedback_form .user_datas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+
+.feedback .feedback_form .user_datas input {
+  width: 50%;
+  height: 40px;
+  border: 1px solid gray;
+  padding: 0 10px;
+  border-radius: 6px;
+  outline: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 1rem;
+}
+
+.feedback .feedback_form textarea {
+  width: 100%;
+  margin-top: 20px;
+  height: 200px;
+  padding: 10px;
+  font-size: 1rem;
+  outline: none;
+  border-radius: 5px;
+}
+
+.feedback .feedback_form .btn_send_feedback button {
+  width: 200px;
+  height: 45px;
+  background-color: #1f7d63;
+  font-size: 1.3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  gap: 10px;
+  border: none;
+  border-radius: 10px;
+}
+/*# sourceMappingURL=Feedback.css.map */

@@ -1,0 +1,52 @@
+.feedback {
+  margin-bottom: 40px;
+  .title {
+    text-align: center;
+    font-size: 2rem;
+    padding: 20px 0px;
+    font-weight: 500;
+    color: rgb(99, 91, 91);
+  }
+  .feedback_form {
+    width: 500px;
+    margin: 0 auto;
+    .user_datas {
+      display: flex;
+      gap: 10px;
+      input {
+        width: 50%;
+        height: 40px;
+        border: 1px solid gray;
+        padding: 0 10px;
+        border-radius: 6px;
+        outline: none;
+        box-sizing: border-box;
+        font-size: 1rem;
+      }
+    }
+    textarea {
+      width: 100%;
+      margin-top: 20px;
+      height: 200px;
+      padding: 10px;
+      font-size: 1rem;
+      outline: none;
+      border-radius: 5px;
+    }
+    .btn_send_feedback {
+      button {
+        width: 200px;
+        height: 45px;
+        background-color: #1f7d63;
+        font-size: 1.3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        gap: 10px;
+        border: none;
+        border-radius: 10px;
+      }
+    }
+  }
+}

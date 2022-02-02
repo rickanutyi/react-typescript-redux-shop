@@ -9,19 +9,22 @@ import { ProductType } from "../../store/reducers/types";
 
 const NewProducts: FC = () => {
   const dispatch = useDispatch();
-  const { products, loading } = useTypedSelector((state) => state.products);
+  const { products, loading, error } = useTypedSelector(
+    (state) => state.products
+  );
   const [product, setProducts] = useState<ProductType[] | null>([]);
 
   useEffect(() => {
     dispatch(getProducts());
   }, []);
-  console.log(products);
   useEffect(() => {
     setProducts(products);
   }, [products]);
-  let arr = [1, 2, 3, 4, 5];
   if (loading) {
     return <h1>loading</h1>;
+  }
+  if (error) {
+    <h2>{error}</h2>;
   }
   return (
     <div className="new_products">
@@ -31,7 +34,7 @@ const NewProducts: FC = () => {
           <div className="new_products_list">
             {product !== null && !!product.length
               ? product.map((prod) => <Card key={prod.id} product={prod} />)
-              : null}
+              : error}
           </div>
         </div>
       </div>

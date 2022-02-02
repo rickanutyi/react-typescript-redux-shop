@@ -1,5 +1,7 @@
 .footer {
   margin-top: auto;
+  height: 500px;
+  background-color: rgba(248, 244, 1, 0.2);
 }
 
 .footer .footer_content {
@@ -10,6 +12,7 @@
 }
 
 .footer .footer_content ul {
+  padding-top: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

@@ -1,6 +1,7 @@
 import {
   DefaultStateProducts,
   GET_PRODUCTS,
+  GET_PRODUCTS_ERROR,
   GET_PRODUCTS_SUCCESS,
   ProductAction,
 } from "./types";
@@ -17,9 +18,11 @@ export const productReducer = (
 ): DefaultStateProducts => {
   switch (action.type) {
     case GET_PRODUCTS:
-      return { ...state, products: [] };
+      return { ...state, loading: true, products: [] };
     case GET_PRODUCTS_SUCCESS:
-      return { ...state, products: action.payload };
+      return { ...state, loading: false, products: action.payload };
+    case GET_PRODUCTS_ERROR:
+      return { ...state, error: action.payload };
     default:
       return state;
   }

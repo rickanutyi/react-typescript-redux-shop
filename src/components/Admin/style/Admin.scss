@@ -1,5 +1,11 @@
 .admin_page {
+  &::-webkit-scrollbar {
+    width: 0;
+  }
   .admin_page_content {
+    &::-webkit-scrollbar {
+      width: 0;
+    }
     .admin {
       padding: 20px;
       font-size: 2rem;
@@ -9,6 +15,14 @@
     .add_new_product {
       display: flex;
       justify-content: space-around;
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+      .edit_add {
+        &::-webkit-scrollbar {
+          width: 0;
+        }
+      }
     }
   }
 }
