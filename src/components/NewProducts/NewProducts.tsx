@@ -15,7 +15,7 @@ const NewProducts: FC = () => {
   const [product, setProducts] = useState<ProductType[] | null>([]);
 
   useEffect(() => {
-    dispatch(getProducts());
+    dispatch(getProducts("ather"));
   }, []);
   useEffect(() => {
     setProducts(products);

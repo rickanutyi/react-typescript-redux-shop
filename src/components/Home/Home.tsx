@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Home.css";
 import BannerList from "../BannerList/BannerList";
 import NewProducts from "../NewProducts/NewProducts";
@@ -7,8 +7,28 @@ import ProductsList from "../ProductsList/ProductsList";
 import Slider from "../Slider/Slider";
 import Reviews from "../Reviews/Reviews";
 import Feedabck from "../Feedback/Feedabck";
+import { useDispatch } from "react-redux";
+import { useTypedSelector } from "../hooks/useTypedSelector";
+import { getProducts } from "../../store/actionCreators/products";
+import { ProductType } from "../../store/reducers/types";
 
 const Home = () => {
+  const dispatch = useDispatch();
+  const { products, loading, error, drinks, nuts } = useTypedSelector(
+    (state) => state.products
+  );
+
+  const [drink, setDrinks] = useState<ProductType[] | null>([]);
+  const [nut, setNuts] = useState<ProductType[] | null>([]);
+
+  useEffect(() => {
+    dispatch(getProducts("drinks"));
+    dispatch(getProducts("nuts"));
+  }, []);
+  useEffect(() => {
+    setDrinks(drinks);
+    setNuts(nuts);
+  }, [drinks, nuts]);
   return (
     <div className="home">
       <Slider />
@@ -20,13 +40,13 @@ const Home = () => {
           <h2>Вода, соки, напитки</h2>
         </div>
       </div>
-      <ProductsList key="orehi" />
+      <ProductsList key="напитки" drink={drink} />
       <div className="some_title">
         <div className="container">
           <h2>Орехи</h2>
         </div>
       </div>
-      <ProductsList key="otzyvy" />
+      <ProductsList key="орехи" nut={nut} />
       <div className="some_title">
         <div className="container">
           <h2>Отзывы клиииентов</h2>

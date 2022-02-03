@@ -1,7 +1,7 @@
 import React, { FC, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getProducts } from "../../../store/actionCreators/products";
+import { getAllProducts } from "../../../store/actionCreators/products";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import "./AllProducts.css";
 
@@ -15,7 +15,7 @@ const AllProducts: FC<Props> = ({ setProduct }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getProducts());
+    dispatch(getAllProducts());
   }, []);
   return (
     <div className="all_products">

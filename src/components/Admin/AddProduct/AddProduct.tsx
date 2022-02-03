@@ -22,7 +22,7 @@ const AddProduct: FC = () => {
   const [weight, setWeight] = useState<number>(0);
   const [category, setCategory] = useState<string>("");
   // const [images, setImages] = useState<Array<string>>([]);
-
+  const ref2 = useRef<HTMLSelectElement>(null);
   //get images from input
   async function getFile() {
     let inp = document.querySelector<HTMLInputElement>(".file");
@@ -77,6 +77,7 @@ const AddProduct: FC = () => {
       weight,
       rating,
       images: img,
+      category: ref2.current?.value,
     };
     // console.log(images);
     AddNewProduct(product);
@@ -121,16 +122,10 @@ const AddProduct: FC = () => {
         <label htmlFor="category" id="category">
           категоория
         </label>
-        <select name="category" id="">
-          <option onClick={(e) => setCategory("drinks")} value="drinks">
-            напитки
-          </option>
-          <option onClick={(e) => setCategory("nuts")} value="nuts">
-            орехи
-          </option>
-          <option onClick={(e) => setCategory("ather")} value="ather">
-            остальное
-          </option>
+        <select ref={ref2} name="category" id="">
+          <option value="drinks">напитки</option>
+          <option value="nuts">орехи</option>
+          <option value="ather">остальное</option>
         </select>
         {/*  */}
         <label htmlFor="">рейтинг</label>

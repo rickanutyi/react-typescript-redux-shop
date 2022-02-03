@@ -22,6 +22,7 @@ const EditProduct: FC<Props> = ({ editingProduct }) => {
     }
   }, [editingProduct]);
   const [category, setCategory] = useState<string>("");
+  const ref2 = useRef<HTMLSelectElement>(null);
 
   // get file function
   async function getFile() {
@@ -31,7 +32,7 @@ const EditProduct: FC<Props> = ({ editingProduct }) => {
     if (inp?.files?.length === 0) {
       update(product ? [...product?.images] : []);
 
-      dispatch(getProducts());
+      dispatch(getProducts("ather"));
       return;
     }
     for (let i = 0; i < 3; i++) {
@@ -84,7 +85,7 @@ const EditProduct: FC<Props> = ({ editingProduct }) => {
       weight: product?.weight,
       rating: product?.rating,
       images: img,
-      category,
+      category: ref2.current?.value,
     });
   }
 
@@ -124,16 +125,10 @@ const EditProduct: FC<Props> = ({ editingProduct }) => {
           <label htmlFor="category" id="category">
             категоория
           </label>
-          <select name="category" id="">
-            <option onClick={(e) => setCategory("drinks")} value="drinks">
-              напитки
-            </option>
-            <option onClick={(e) => setCategory("nuts")} value="nuts">
-              орехи
-            </option>
-            <option onClick={(e) => setCategory("ather")} value="ather">
-              остальное
-            </option>
+          <select ref={ref2} name="category" id="">
+            <option value="drinks">напитки</option>
+            <option value="nuts">орехи</option>
+            <option value="ather">остальное</option>
           </select>
           {/*  */}
           <label htmlFor="">рейтинг</label>
