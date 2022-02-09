@@ -1,13 +1,7 @@
-import {
-  getDownloadURL,
-  uploadBytesResumable,
-  ref,
-  uploadBytes,
-} from "firebase/storage";
 import React, { FC, useState } from "react";
 import { useRef } from "react";
 import { AddNewProduct } from "../../../AddDataFunctions";
-import { storage } from "../../../firebase";
+import { getFile } from "../../../helpers";
 import "./style/AddProduct.css";
 
 const AddProduct: FC = () => {
@@ -20,51 +14,11 @@ const AddProduct: FC = () => {
   const [discount, setDiscount] = useState<number>(0);
   const [status, setStatus] = useState<string>("");
   const [weight, setWeight] = useState<number>(0);
-  const [category, setCategory] = useState<string>("");
   // const [images, setImages] = useState<Array<string>>([]);
+  const [open, setOpen] = useState<boolean>(false);
   const ref2 = useRef<HTMLSelectElement>(null);
-  //get images from input
-  async function getFile() {
-    let inp = document.querySelector<HTMLInputElement>(".file");
-    let images: Array<string> = []; //
-    //
-    for (let i = 0; i < 3; i++) {
-      let file = inp?.files?.[i];
-      const storageRef = ref(storage, `${file?.name}`);
-      if (file) {
-        const uploadTask = uploadBytesResumable(storageRef, file);
-        uploadTask.on(
-          "state_changed",
-          (snapshot) => {
-            const progress =
-              (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-            console.log("Upload is " + progress + "% done");
-            switch (snapshot.state) {
-              case "paused":
-                console.log("Upload is paused");
-                break;
-              case "running":
-                console.log("Upload is running");
-                break;
-            }
-            // getDownloadURL(uploadTask.snapshot.ref).then((res) => {});
-          },
-          (error) => {
-            console.log(22222, error.message);
-          },
-          () => {
-            getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-              console.log("File available at", downloadURL);
-              images.push(downloadURL);
-              if (images.length === 3) {
-                return createProduct(images);
-              }
-            });
-          }
-        );
-      }
-    }
-  }
+
+  let inp = document.querySelector<HTMLInputElement>(".file");
 
   //create product
   async function createProduct(img: string[]) {
@@ -78,12 +32,13 @@ const AddProduct: FC = () => {
       rating,
       images: img,
       category: ref2.current?.value,
+      date: Date.now(),
     };
     // console.log(images);
-    AddNewProduct(product);
+    await AddNewProduct(product);
+    return true;
   }
 
-  const [open, setOpen] = useState<boolean>(false);
   return (
     <div className="add_product">
       <div onClick={() => setOpen((prev) => !prev)} className="add_title">
@@ -174,7 +129,10 @@ const AddProduct: FC = () => {
             multiple
           />
         </div>
-        <button onClick={getFile} type="button">
+        <button
+          onClick={() => getFile([createProduct, inp, false, false])}
+          type="button"
+        >
           добавить
         </button>
       </form>

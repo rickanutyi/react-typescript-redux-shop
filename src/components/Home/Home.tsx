@@ -9,7 +9,11 @@ import Reviews from "../Reviews/Reviews";
 import Feedabck from "../Feedback/Feedabck";
 import { useDispatch } from "react-redux";
 import { useTypedSelector } from "../hooks/useTypedSelector";
-import { getProducts } from "../../store/actionCreators/products";
+import {
+  getDrinks,
+  getNuts,
+  getProducts,
+} from "../../store/actionCreators/products";
 import { ProductType } from "../../store/reducers/types";
 
 const Home = () => {
@@ -22,8 +26,8 @@ const Home = () => {
   const [nut, setNuts] = useState<ProductType[] | null>([]);
 
   useEffect(() => {
-    dispatch(getProducts("drinks"));
-    dispatch(getProducts("nuts"));
+    dispatch(getDrinks());
+    dispatch(getNuts());
   }, []);
   useEffect(() => {
     setDrinks(drinks);

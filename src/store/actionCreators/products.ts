@@ -2,7 +2,10 @@ import { collection, getDocs, query, where } from "firebase/firestore";
 import { Dispatch } from "react";
 import { db } from "../../firebase";
 import {
+  GET_DRINKS_ERROR,
   GET_DRINKS_SUCCESS,
+  GET_NUTS_ERROR,
+  GET_NUTS_SUCCESS,
   GET_PRODUCTS,
   GET_PRODUCTS_ERROR,
   GET_PRODUCTS_SUCCESS,
@@ -15,32 +18,18 @@ export const getProducts = (arg: string) => {
     try {
       dispatch({ type: GET_PRODUCTS, loading: true });
 
-      const q = query(
-        collection(db, "products"),
-        where("category", "==", `${arg}`)
-      );
+      const q = query(collection(db, "products"));
       let docSnap = await getDocs(q);
       let products: any[] = [];
       docSnap.forEach((item) => {
         products.push({ ...item.data(), id: item.id });
       });
-      console.log(products);
-      switch (arg) {
-        case "ather":
-          dispatch({
-            type: GET_PRODUCTS_SUCCESS,
-            loading: false,
-            payload: products,
-          });
-          break;
-        case "drinks":
-          dispatch({
-            type: GET_DRINKS_SUCCESS,
-            loading: false,
-            payload: products,
-          });
-          break;
-      }
+
+      dispatch({
+        type: GET_PRODUCTS_SUCCESS,
+        loading: false,
+        payload: products,
+      });
     } catch (error) {
       dispatch({
         type: GET_PRODUCTS_ERROR,
@@ -49,7 +38,58 @@ export const getProducts = (arg: string) => {
     }
   };
 };
-
+//GET DRINKS
+export const getDrinks = () => {
+  return async (dispatch: Dispatch<ProductAction>) => {
+    try {
+      const q = query(
+        collection(db, "products"),
+        where("category", "==", "drinks")
+      );
+      let docSnap = await getDocs(q);
+      let products: any[] = [];
+      docSnap.forEach((item) => {
+        products.push({ ...item.data(), id: item.id });
+      });
+      dispatch({
+        type: GET_DRINKS_SUCCESS,
+        loading: false,
+        payload: products,
+      });
+    } catch {
+      dispatch({
+        type: GET_DRINKS_ERROR,
+        payload: "произошла ошибка при загрузке",
+      });
+    }
+  };
+};
+//GET NUTS
+export const getNuts = () => {
+  return async (dispatch: Dispatch<ProductAction>) => {
+    try {
+      const q = query(
+        collection(db, "products"),
+        where("category", "==", "nuts")
+      );
+      let docSnap = await getDocs(q);
+      let products: any[] = [];
+      docSnap.forEach((item) => {
+        products.push({ ...item.data(), id: item.id });
+      });
+      dispatch({
+        type: GET_NUTS_SUCCESS,
+        loading: false,
+        payload: products,
+      });
+    } catch {
+      dispatch({
+        type: GET_NUTS_ERROR,
+        payload: "произошла ошибка при загрузке",
+      });
+    }
+  };
+};
 //get all products
 export const getAllProducts = () => {
   return async (dispatch: Dispatch<ProductAction>) => {
@@ -59,6 +99,7 @@ export const getAllProducts = () => {
       const q = query(collection(db, "products"));
       let docSnap = await getDocs(q);
       let products: any[] = [];
+
       docSnap.forEach((item) => {
         products.push({ ...item.data(), id: item.id });
       });

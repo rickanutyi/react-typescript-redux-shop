@@ -5,6 +5,7 @@ export const AddNewProduct = async (product: any) => {
   let docRef: any;
   try {
     docRef = await addDoc(collection(db, "products"), product);
+    return true;
   } catch (err) {
     console.log(err);
   }

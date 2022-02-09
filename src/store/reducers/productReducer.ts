@@ -7,6 +7,7 @@ import {
   GET_DRINKS,
   GET_DRINKS_SUCCESS,
   GET_DRINKS_ERROR,
+  GET_NUTS_SUCCESS,
 } from "./types";
 
 const defaultState: DefaultStateProducts = {
@@ -34,6 +35,8 @@ export const productReducer = (
       return { ...state, loading: false, drinks: action.payload };
     case GET_DRINKS_ERROR:
       return { ...state, error: action.payload };
+    case GET_NUTS_SUCCESS:
+      return { ...state, loading: false, nuts: action.payload };
     default:
       return state;
   }

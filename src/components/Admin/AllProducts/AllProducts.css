@@ -1,14 +1,14 @@
 .all_products {
-  width: 50%;
-  height: 100%;
+  width: 100%;
+  min-height: 570px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -24,7 +24,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 267px;
+  height: 275px;
 }
 
 .all_products .mini_card .product_name {
@@ -62,5 +62,39 @@
   font-size: 1.1rem;
   font-weight: 600;
   color: #fff;
+}
+
+.paginationBtns {
+  width: 80%;
+  height: 60px;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.paginationBtns a {
+  padding: 10px;
+  margin: 8px;
+  border-radius: 5px;
+  border: 1px solid #1f7d63;
+  color: #1f7d63;
+  cursor: pointer;
+}
+
+.paginationBtns a:hover {
+  color: white;
+  background-color: #1f7d63;
+}
+
+.activeBtn a {
+  color: white;
+  background-color: #1f7d63;
 }
 /*# sourceMappingURL=AllProducts.css.map */

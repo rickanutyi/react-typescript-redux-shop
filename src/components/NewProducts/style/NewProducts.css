@@ -20,5 +20,11 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  overflow-y: scroll;
+  gap: 25px;
+}
+
+.new_products .new_products_items .new_products_list::-webkit-scrollbar {
+  width: 0;
 }
 /*# sourceMappingURL=NewProducts.css.map */
