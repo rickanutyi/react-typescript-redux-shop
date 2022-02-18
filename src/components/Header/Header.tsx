@@ -10,7 +10,7 @@ const Header: FC = () => {
 
   function goToProfile() {
     if (user) {
-      if (user.email === "erachynybaev@gmail.com") {
+      if (user.email === "erachynybaev@gmail.co") {
         navigate("/admin");
       } else {
         navigate("/profile");

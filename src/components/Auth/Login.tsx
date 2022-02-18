@@ -15,6 +15,11 @@ const Login: FC = () => {
     user,
   } = useContext(authContext);
 
+  async function login() {
+    let data = await handleLogIn();
+    console.log(data);
+  }
+
   console.log(user);
   return (
     <div className="login">
@@ -36,7 +41,7 @@ const Login: FC = () => {
             id="password"
           />
           <div className="login_btns">
-            <button type="button" onClick={handleLogIn}>
+            <button type="button" onClick={login}>
               войти
             </button>
             <button>забыли пароль?</button>

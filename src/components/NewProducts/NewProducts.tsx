@@ -24,7 +24,9 @@ const NewProducts: FC = () => {
     return <h1>loading</h1>;
   }
   if (error) {
-    <h2>{error}</h2>;
+    <div className="container">
+      <h2>{error}</h2>
+    </div>;
   }
   return (
     <div className="new_products">

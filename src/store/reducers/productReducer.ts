@@ -4,9 +4,7 @@ import {
   GET_PRODUCTS,
   GET_PRODUCTS_ERROR,
   GET_PRODUCTS_SUCCESS,
-  GET_DRINKS,
   GET_DRINKS_SUCCESS,
-  GET_DRINKS_ERROR,
   GET_NUTS_SUCCESS,
 } from "./types";
 
@@ -29,12 +27,8 @@ export const productReducer = (
       return { ...state, loading: false, products: action.payload };
     case GET_PRODUCTS_ERROR:
       return { ...state, error: action.payload };
-    case GET_DRINKS:
-      return { ...state, loading: true, drinks: [] };
     case GET_DRINKS_SUCCESS:
       return { ...state, loading: false, drinks: action.payload };
-    case GET_DRINKS_ERROR:
-      return { ...state, error: action.payload };
     case GET_NUTS_SUCCESS:
       return { ...state, loading: false, nuts: action.payload };
     default:

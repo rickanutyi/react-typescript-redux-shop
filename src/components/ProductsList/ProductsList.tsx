@@ -1,8 +1,5 @@
-import React, { FC, useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { getProducts } from "../../store/actionCreators/products";
+import React, { FC } from "react";
 import { ProductType } from "../../store/reducers/types";
-import { useTypedSelector } from "../hooks/useTypedSelector";
 import Card from "../ProductCard/Card";
 import "./style/ProductsList.css";
 

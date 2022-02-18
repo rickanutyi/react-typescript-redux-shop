@@ -21,6 +21,7 @@ const EditProduct: FC<Props> = ({ editingProduct }) => {
       setProduct({ ...editingProduct, images: [...editingProduct.images] });
     }
   }, [editingProduct]);
+
   const ref2 = useRef<HTMLSelectElement>(null);
   let inp = document.querySelector<HTMLInputElement>(".file2");
 

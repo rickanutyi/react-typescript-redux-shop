@@ -29,6 +29,7 @@ const Home = () => {
     dispatch(getDrinks());
     dispatch(getNuts());
   }, []);
+
   useEffect(() => {
     setDrinks(drinks);
     setNuts(nuts);
